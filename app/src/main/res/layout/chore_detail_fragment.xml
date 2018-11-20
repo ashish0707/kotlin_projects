@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/chorename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:hint="@string/sample_chorename"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/about"
+        app:layout_constraintTop_toBottomOf="@id/chorename" />
+
+    <EditText
+        android:id="@+id/about_to_tv"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:text="@string/about_task"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/about"
+        app:layout_constraintRight_toLeftOf="@id/vguideline2"
+        app:layout_constraintStart_toStartOf="@id/about"
+        app:layout_constraintTop_toBottomOf="@id/about"
+        app:layout_constraintBottom_toTopOf="@+id/assign_to_label"/>
+
+    <TextView
+        android:id="@+id/assign_to_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/assign_task_to"
+        app:layout_constraintTop_toBottomOf="@id/about_to_tv"
+         />
+
+    <Spinner
+        android:id="@+id/assigned_to_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_button"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/task_assigned_to_example"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/assign_to_label"
+        app:layout_constraintRight_toLeftOf="@id/assign_to_label"
+        app:layout_constraintStart_toStartOf="@id/assign_to_label"
+        app:layout_constraintTop_toBottomOf="@id/assign_to_label" />
+
+
+
+    <TextView
+        android:id="@+id/feedback_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/feedback"
+        app:layout_constraintTop_toBottomOf="@id/assigned_to_spinner" />
+
+    <EditText
+        android:id="@+id/feedback_et"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:text="@string/about_task"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/feedback_label"
+        app:layout_constraintEnd_toEndOf="@id/feedback_label"
+        app:layout_constraintTop_toBottomOf="@+id/feedback_label"
+        app:layout_constraintBottom_toTopOf="@+id/time_to_complete_label" />
+
+
+    <TextView
+        android:id="@+id/time_to_complete_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/time_to_complete"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/feedback_et"
+        app:layout_constraintStart_toStartOf="@id/feedback_et"
+        app:layout_constraintBottom_toTopOf="@+id/time_to_complete_et" />
+
+    <EditText
+        android:id="@+id/time_to_complete_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left"
+        android:inputType="number"
+        android:padding="10dp"
+        android:text="@string/sample_hours"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/about"
+        app:layout_constraintRight_toLeftOf="@id/about"
+        app:layout_constraintStart_toStartOf="@id/about"
+        app:layout_constraintBottom_toTopOf="@+id/mark_complete"/>
+
+    <Button
+        android:id="@+id/mark_complete"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/mark_complete"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/hguideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vguideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+</android.support.constraint.ConstraintLayout>

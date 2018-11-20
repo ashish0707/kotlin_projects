@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/chorenamelabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/enter_task_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/chorename"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/rounded_button"
+        android:hint="@string/chorename"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/chorenamelabel" />
+
+
+    <TextView
+        android:id="@+id/due_date_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/select_due_date"
+        app:layout_constraintTop_toBottomOf="@id/chorename" />
+
+    <TextView
+        android:id="@+id/due_date_tv"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/date_example"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vguideline2"
+        app:layout_constraintRight_toLeftOf="@id/vguideline2"
+        app:layout_constraintStart_toStartOf="@id/due_date_label"
+        app:layout_constraintTop_toBottomOf="@id/due_date_label" />
+
+    <Button
+        android:id="@+id/assign_button"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/calender"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/due_date_tv"
+        app:layout_constraintEnd_toEndOf="@id/assign_to_label"
+        app:layout_constraintLeft_toRightOf="@+id/vguideline2"
+        app:layout_constraintStart_toEndOf="@id/vguideline2"
+        app:layout_constraintTop_toTopOf="@id/due_date_tv" />
+
+    <TextView
+        android:id="@+id/assign_to_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/assign_task_to"
+        app:layout_constraintTop_toBottomOf="@id/due_date_tv" />
+
+    <Spinner
+        android:id="@+id/assigned_to_spinner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_button"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:text="@string/task_assigned_to_example"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/assign_to_label"
+        app:layout_constraintRight_toLeftOf="@id/assign_to_label"
+        app:layout_constraintStart_toStartOf="@id/assign_to_label"
+        app:layout_constraintTop_toBottomOf="@id/assign_to_label" />
+
+
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/about"
+        app:layout_constraintTop_toBottomOf="@id/assigned_to_spinner" />
+
+    <EditText
+        android:id="@+id/about_to_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="left"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:text="@string/about_task"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/create"
+        app:layout_constraintEnd_toEndOf="@id/about"
+        app:layout_constraintRight_toLeftOf="@id/vguideline2"
+        app:layout_constraintStart_toStartOf="@id/assign_to_label"
+        app:layout_constraintTop_toBottomOf="@id/about" />
+
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/create"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/hguideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vguideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/vguideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.66" />
+
+</android.support.constraint.ConstraintLayout>
