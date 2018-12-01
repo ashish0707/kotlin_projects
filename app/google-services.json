@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "290732726983",
+    "firebase_url": "https://homechores-a2471.firebaseio.com",
+    "project_id": "homechores-a2471",
+    "storage_bucket": "homechores-a2471.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290732726983:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290732726983-fpdp34leb5h7q2sc1kuels160rad0kob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "f560162b99f16bb40040171c93553a720ddc9340"
+          }
+        },
+        {
+          "client_id": "290732726983-ivpphkrmh1ee6id0oj1vd652mhdllt9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB68zD6WqUxME4ldN6vLaGZMzygwhU_WsQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290732726983-ivpphkrmh1ee6id0oj1vd652mhdllt9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
