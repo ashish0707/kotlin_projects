@@ -105,7 +105,7 @@ public class LoginFragmentJava extends Fragment {
                         }
                         // No result found, not a valid user
                         else {
-                            Toast toast = Toast.makeText(getContext(), "User Not Found", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getContext(), "ChorePojo Not Found", Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     }

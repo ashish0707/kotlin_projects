@@ -22,7 +22,7 @@ class ChoreDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         var fragmentView = inflater.inflate(R.layout.chore_detail_fragment, container, false)
-        val spinner = fragmentView.assigned_to_spinner
+        val spinner = fragmentView.assigned_spinner
         setUpSpinner(spinner)
         return fragmentView
     }
