@@ -21,7 +21,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class LoginFragment extends Fragment {
+public class LoginFragmentJava extends Fragment {
 
     // Objects for tracking text changes (filled username and password)
     EditText username, password;

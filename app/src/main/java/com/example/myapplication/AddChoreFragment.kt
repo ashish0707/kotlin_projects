@@ -29,7 +29,7 @@ class AddChoreFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        var fragmentView = inflater.inflate(R.layout.add_chore_fragment, container, false)
+        val fragmentView = inflater.inflate(R.layout.add_chore_fragment, container, false)
         val spinner = fragmentView.assigned_to_spinner
         val dateButton = fragmentView.assign_button
         setUpSpinner(spinner)
