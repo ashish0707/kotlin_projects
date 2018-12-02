@@ -21,7 +21,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class LoginFragment extends Fragment {
+public class LoginFragmentJava extends Fragment {
 
     // Objects for tracking text changes (filled username and password)
     EditText username, password;
@@ -105,7 +105,7 @@ public class LoginFragment extends Fragment {
                         }
                         // No result found, not a valid user
                         else {
-                            Toast toast = Toast.makeText(getContext(), "User Not Found", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(getContext(), "ChorePojo Not Found", Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     }
