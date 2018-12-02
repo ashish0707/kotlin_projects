@@ -1,7 +1,7 @@
 package com.example.myapplication.pojo
 
-data class ChorePojo(val name: String, val date: String, val assignedTo: String,
-                     val about: String) {
+data class ChorePojo(val name: String = "", val date: String = "", val assignedTo: String = "",
+                     val about: String = "") {
 
     fun toMap(): Map<String, Any?> {
         return mapOf(
