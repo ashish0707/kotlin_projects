@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/initialFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/initialFragment"
@@ -18,12 +18,13 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        tools:layout="@layout/login_screen"
         android:name="com.example.myapplication.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_mobile_navigation"
+            tools:layout="@layout/login_screen"
             app:destination="@id/mobile_navigation" />
     </fragment>
+    
     <include app:graph="@navigation/main_navigation" />
 </navigation>

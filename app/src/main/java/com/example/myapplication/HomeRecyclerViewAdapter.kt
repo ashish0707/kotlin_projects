@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.findNavController
+import com.example.myapplication.pojo.ChorePojo
 import kotlinx.android.synthetic.main.chorelist_viewpager_list_child.view.*
 
-class HomeRecyclerViewAdapter(private val items: ArrayList<String>, private val context: Context)
+class HomeRecyclerViewAdapter(private val items: ArrayList<ChorePojo?>, private val context: Context)
     : RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.title.text = items[position]
+        holder.title.text = items[position]?.name
         holder.title.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_homeFragment_to_choreDetailFragment,
                     null, null, NavigatorExtra(true))
