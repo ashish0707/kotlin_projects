@@ -11,7 +11,11 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.base_recyclerview_fragment.view.*
 
 
-class ChoreListViewPagerFragment : Fragment() {
+class ChoreListViewPagerFragment : BaseFragment() {
+
+    override fun onBackPressed(): Boolean {
+        return false
+    }
 
     lateinit var mAdapter: HomeRecyclerViewAdapter
     val allChoreList : ArrayList<ChorePojo?> = arrayListOf()

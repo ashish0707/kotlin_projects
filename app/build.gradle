@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
+apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
@@ -24,6 +24,9 @@ android {
         }
     }
     dataBinding.enabled = true
+}
+androidExtensions {
+    experimental = true
 }
 
 dependencies {

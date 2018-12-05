@@ -29,7 +29,7 @@
     <string name="time_to_complete">Time to Complete : (Hours)</string>
     <string name="sample_hours">2</string>
     <string name="mark_complete">Mark Complete</string>
-    <string-array name="planets_array">
+    <string-array name="roommate_array">
         <item>Roommate 1</item>
         <item>Roommate 2</item>
         <item>Roommate 3</item>

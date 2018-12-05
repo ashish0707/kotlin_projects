@@ -10,7 +10,11 @@ import 	android.support.v7.widget.RecyclerView.LayoutManager
 import kotlinx.android.synthetic.main.base_recyclerview_fragment.view.*
 
 
-class NotificationFragment : Fragment() {
+class NotificationFragment : BaseFragment() {
+
+    override fun onBackPressed(): Boolean {
+        return false
+    }
 
 
     companion object {

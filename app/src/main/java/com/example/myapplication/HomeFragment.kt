@@ -11,7 +11,11 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.homefragment.view.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
+
+    override fun onBackPressed(): Boolean {
+        return false
+    }
 
     private var fragmentView: View? = null
 

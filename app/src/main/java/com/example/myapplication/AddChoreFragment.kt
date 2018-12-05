@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.myapplication.pojo.ChorePojo
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -17,14 +19,14 @@ import kotlinx.android.synthetic.main.add_chore_fragment.*
 import kotlinx.android.synthetic.main.add_chore_fragment.view.*
 
 
-class AddChoreFragment : Fragment() {
-
+class AddChoreFragment : BaseFragment() {
 
     private lateinit var name : EditText
     private lateinit var date : TextView
     private lateinit var about : EditText
     private lateinit var spinner : Spinner
     private lateinit var database: DatabaseReference
+    private lateinit var navController: NavController
 
     companion object {
         fun newInstance(): AddChoreFragment {
@@ -47,20 +49,27 @@ class AddChoreFragment : Fragment() {
         return fragmentView
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+    }
+
     private fun onCreateChoreButtonPressed() {
         database = FirebaseDatabase.getInstance().reference
-        val key = database.child("task_list").push()
-        val pojo = ChorePojo(name.text.toString(), date.text.toString(), spinner.selectedItem.toString(), about.text.toString())
-        key.setValue(pojo.toMap())
+        val databaseReference = database.child("task_list").push()
+        val id = "${databaseReference.key}"
+        val pojo = ChorePojo(id,name.text.toString(), date.text.toString(), spinner.selectedItem.toString(), about.text.toString())
+        databaseReference.setValue(pojo.toMap())
         Toast.makeText(context, "Chore saved successfully", Toast.LENGTH_LONG).show()
         date.text = ""
         about.text.clear()
         name.text.clear()
+        navController.navigate(AddChoreFragmentDirections.actionGlobalHomeFragment())
 
     }
 
     private fun setUpSpinner(spinner: Spinner?) {
-        ArrayAdapter.createFromResource(activity, R.array.planets_array, android.R.layout.simple_spinner_item)
+        ArrayAdapter.createFromResource(activity, R.array.roommate_array, android.R.layout.simple_spinner_item)
                 .also { adapter ->
                     // Specify the layout to use when the list of choices appears
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -84,6 +93,11 @@ class AddChoreFragment : Fragment() {
                             month,
                             day)
 
+    }
+
+    override fun onBackPressed(): Boolean {
+        navController.navigate(AddChoreFragmentDirections.actionGlobalHomeFragment())
+        return true
     }
 
 

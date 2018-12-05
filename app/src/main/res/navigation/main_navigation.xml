@@ -49,6 +49,17 @@
         android:id="@+id/choreDetailFragment"
         tools:layout="@layout/chore_detail_fragment"
         android:name="com.example.myapplication.ChoreDetailFragment"
-        android:label="ChoreDetailFragment" />
+        android:label="ChoreDetailFragment" >
+
+        <argument
+            android:name="pojo"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.example.myapplication.pojo.ChorePojo" />
+        <action
+            android:id="@+id/action_choreDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true" />
+    </fragment>
 
 </navigation>
