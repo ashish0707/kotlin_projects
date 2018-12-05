@@ -15,11 +15,12 @@
     <string name="title_add_chore">Add Chore</string>
     <string name="chorename">Enter Chore Name</string>
     <string name="select_due_date">Select Due Date</string>
-    <string name="calender">calender</string>
+    <string name="calender">calendar</string>
     <string name="date_example">Ex. 12/29/2018</string>
     <string name="assign_task_to">Assign Task To :</string>
     <string name="about">About</string>
     <string name="about_task">This is a example task</string>
+    <string name="example_feedback">Example feedback</string>
     <string name="task_assigned_to_example">Ex. Bob</string>
     <string name="select">select</string>
     <string name="create">Create</string>
@@ -27,7 +28,7 @@
     <string name="sample_chorename">Get Grocery</string>
     <string name="feedback">feedback</string>
     <string name="time_to_complete">Time to Complete : (Hours)</string>
-    <string name="sample_hours">2</string>
+    <string name="sample_hours">Ex: 2</string>
     <string name="mark_complete">Mark Complete</string>
     <string-array name="roommate_array">
         <item>Roommate 1</item>
