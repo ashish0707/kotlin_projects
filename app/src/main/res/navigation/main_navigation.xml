@@ -12,10 +12,12 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_addChoreFragment"
-            app:destination="@id/addChoreFragment" />
+            app:destination="@id/addChoreFragment"
+            app:launchSingleTop="true" />
         <action
             android:id="@+id/action_homeFragment_to_choreDetailFragment"
-            app:destination="@id/choreDetailFragment" />
+            app:destination="@id/choreDetailFragment"
+            app:launchSingleTop="true" />
     </fragment>
     <action
         android:id="@+id/action_global_homeFragment"
@@ -36,7 +38,8 @@
         android:label="AddChoreFragment" >
         <action
             android:id="@+id/action_addChoreFragment_to_notificationFragment2"
-            app:destination="@id/notificationFragment2" />
+            app:destination="@id/notificationFragment2"
+            app:launchSingleTop="true" />
     </fragment>
 
     <fragment

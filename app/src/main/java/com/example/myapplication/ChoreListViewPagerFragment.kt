@@ -1,7 +1,8 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.preference.PreferenceManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -18,10 +19,16 @@ class ChoreListViewPagerFragment : BaseFragment() {
     }
 
     lateinit var mAdapter: HomeRecyclerViewAdapter
-    val allChoreList : ArrayList<ChorePojo?> = arrayListOf()
+    var shouldFilterChore: Boolean = false
+    val allChoreList: ArrayList<ChorePojo?> = arrayListOf()
+
     companion object {
-        fun newInstance(): ChoreListViewPagerFragment {
-            return ChoreListViewPagerFragment()
+        fun newInstance(shouldFilterChore: Boolean = false): ChoreListViewPagerFragment {
+            val b = Bundle()
+            b.putBoolean("shouldFilterChore", shouldFilterChore)
+            val frag = ChoreListViewPagerFragment()
+            frag.arguments = b
+            return frag
         }
     }
 
@@ -31,6 +38,7 @@ class ChoreListViewPagerFragment : BaseFragment() {
         view.recyclerView.layoutManager = LinearLayoutManager(activity)
         mAdapter = HomeRecyclerViewAdapter(allChoreList, context!!)
         view.recyclerView.adapter = mAdapter
+        shouldFilterChore = arguments!!.getBoolean("shouldFilterChore", false)
         return view
     }
 
@@ -46,11 +54,21 @@ class ChoreListViewPagerFragment : BaseFragment() {
         return object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 allChoreList.clear()
+                val tempList = mutableListOf<ChorePojo?>()
                 val items = dataSnapshot.children.iterator()
-                while(items.hasNext()) {
+                while (items.hasNext()) {
                     val chorePojo = items.next().getValue(ChorePojo::class.java)
-                    allChoreList.add(chorePojo)
+                    tempList.add(chorePojo)
                 }
+                if (shouldFilterChore) {
+                    val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+                    val username = sharedPref.getString("username", "john")
+                    val l = tempList.filter {
+                        it?.assignedTo.equals(username)
+                    }
+                    allChoreList.addAll(l)
+                } else
+                    allChoreList.addAll(tempList)
                 mAdapter.notifyDataSetChanged()
             }
 

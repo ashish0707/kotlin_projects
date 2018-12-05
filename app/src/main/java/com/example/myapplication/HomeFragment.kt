@@ -1,13 +1,11 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.homefragment.view.*
 
 
@@ -37,7 +35,7 @@ class HomeFragment : BaseFragment() {
     private fun setUpViewPager(viewPager: ViewPager?, fragmentManager: FragmentManager?) {
         val viewPagerAdapter = HomeViewPagerAdapter(fragmentManager!!)
         viewPagerAdapter.addFrag(ChoreListViewPagerFragment.newInstance(), "All Chores")
-        viewPagerAdapter.addFrag(ChoreListViewPagerFragment.newInstance(), "My Chores")
+        viewPagerAdapter.addFrag(ChoreListViewPagerFragment.newInstance(true), "My Chores")
         viewPager?.adapter = viewPagerAdapter
     }
 

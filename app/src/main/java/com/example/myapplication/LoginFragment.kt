@@ -3,9 +3,11 @@ package com.example.myapplication
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +47,8 @@ class LoginFragment : Fragment(), ValueEventListener {
 
     override fun onResume() {
         super.onResume()
-        loginButton?.setOnClickListener { mDatabase.child("users").addListenerForSingleValueEvent(this) }
+        loginButton?.setOnClickListener {
+            mDatabase.child("users").addListenerForSingleValueEvent(this) }
     }
 
     override fun onCancelled(p0: DatabaseError) {
@@ -69,8 +72,9 @@ class LoginFragment : Fragment(), ValueEventListener {
     }
 
     private fun saveUserInfo(username: String, password: String) {
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         with (sharedPref.edit()) {
+            Log.d("username", username)
             putString("username", username)
             putString("password", password)
             apply()
