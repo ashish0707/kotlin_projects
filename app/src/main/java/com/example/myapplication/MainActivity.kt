@@ -48,10 +48,12 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        backStackEntryCount= navHostFragment.childFragmentManager.backStackEntryCount
-        if(backStackEntryCount > 1)
+        val f = navHostFragment.childFragmentManager.primaryNavigationFragment as BaseFragment
+        if(!f.onBackPressed())
             super.onBackPressed()
-        else
-            finish()
     }
+
+    private val currentFragment: Fragment?
+        get() = navHostFragment.childFragmentManager.findFragmentById(R.id.homeFragment)
+
 }

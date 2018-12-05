@@ -33,8 +33,6 @@ class CustomNavigator(
         }
 
         transaction.setPrimaryNavigationFragment(fragment)
-        transaction.addToBackStack(null)
-        transaction.setReorderingAllowed(true)
         transaction.commit()
 
         dispatchOnNavigatorNavigated(destination.id, BACK_STACK_DESTINATION_ADDED)
