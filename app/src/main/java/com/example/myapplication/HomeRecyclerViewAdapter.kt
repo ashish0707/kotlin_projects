@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.navigation.findNavController
 import com.example.myapplication.pojo.ChorePojo
@@ -27,9 +28,10 @@ class HomeRecyclerViewAdapter(private val items: ArrayList<ChorePojo?>, private 
             view.findNavController().navigate(directions)
         }
         if (items[position]?.completed == true)
-            holder.title.setBackgroundColor(Color.GRAY)
+            holder.linearlayout.setBackgroundColor(Color.GRAY)
 
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context)
@@ -42,6 +44,7 @@ class HomeRecyclerViewAdapter(private val items: ArrayList<ChorePojo?>, private 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.cardTitle
+        val linearlayout : LinearLayout = view.linearlayout
     }
 }
 

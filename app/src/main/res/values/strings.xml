@@ -30,6 +30,7 @@
     <string name="time_to_complete">Time to Complete : (Hours)</string>
     <string name="sample_hours">Ex: 2</string>
     <string name="mark_complete">Mark Complete</string>
+    <string name="rememberme">Remember me ?</string>
     <string-array name="roommate_array">
         <item>ashish</item>
         <item>brad</item>

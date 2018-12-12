@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
@@ -35,6 +36,7 @@ class ChoreDetailFragment : BaseFragment() {
         fragmentView.time_to_complete_et.setText(chorePojo?.time_to_complete.toString())
         fragmentView.feedback_et.setText(chorePojo?.feedback)
         fragmentView.mark_complete.setOnClickListener { onCompleteChoreButtonPressed() }
+        activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         setUpSpinner(spinner)
         return fragmentView
     }

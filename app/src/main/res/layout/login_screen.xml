@@ -53,6 +53,30 @@
 
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:id="@+id/checkbox"
+        app:layout_constraintStart_toStartOf="@id/password_id_input_layout"
+        app:layout_constraintTop_toBottomOf="@id/password_id_input_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/rememberme"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintLeft_toRightOf="@+id/checkbox"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toBottomOf="@id/password_id_input_layout" />
+
 
     <Button
         android:layout_width="0dp"
@@ -66,8 +90,8 @@
         android:id="@+id/login_button"
         app:layout_constraintEnd_toStartOf="@+id/forgotpassword"
         app:layout_constraintRight_toLeftOf="@id/forgotpassword"
-        app:layout_constraintStart_toStartOf="@id/password_id_input_layout"
-        app:layout_constraintTop_toBottomOf="@id/password_id_input_layout" />
+        app:layout_constraintStart_toStartOf="@id/checkbox"
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
 
     <TextView
         android:id="@+id/forgotpassword"
@@ -82,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="@id/password_id_input_layout"
         app:layout_constraintLeft_toRightOf="@+id/login_button"
         app:layout_constraintStart_toEndOf="@id/login_button"
-        app:layout_constraintTop_toBottomOf="@id/password_id_input_layout" />
+        app:layout_constraintTop_toBottomOf="@id/checkbox" />
 
 
     <android.support.constraint.Guideline
